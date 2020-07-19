@@ -50,7 +50,7 @@ class LogLine:
         self.__dict__ = match.groupdict()
 
         self.status = int( self.status)
-        self.bytes  = -1 if self.bytes == '-' else int( self.bytes)
+        self.bytes  = 0 if self.bytes == '-' else int( self.bytes)
 
         # Parse CLF timestamp into a naive datetime
         # Keep the UTC offset for timezone conversion.
