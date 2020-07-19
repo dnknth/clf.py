@@ -90,9 +90,8 @@ class LogReader:
         for line in self.input:
             try: yield LogLine( line)
             except ValueError as e:
-                print( e)
                 self.errors += 1
-                print( line)
+                print( '# Error:', line, file=sys.stderr)
 
 
 class Op:
