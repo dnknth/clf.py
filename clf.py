@@ -19,13 +19,13 @@ class LogLine:
 
     # Regular expression for Common Log Format
     COMMON_LOG_FORMAT = re.compile(
-        r'^(?P<host>[\d\.:a-f]+)\s' # IPv4 or IPv6
-        r'(?P<identity>\S*)\s'
-        r'(?P<user>\S*)\s'
-        r'\[(?P<date>.*?)\]\s'
+        r'^(?P<host>[\d.:a-f]+)\s' # IPv4 or IPv6
+        r'(?P<identity>\S+)\s'
+        r'(?P<user>\S+)\s'
+        r'\[(?P<date>.{26})\]\s'
         r'"(?P<request>[^"]*)"\s'
-        r'(?P<status>\d+)\s'
-        r'(?P<bytes>\S*)\s'
+        r'(?P<status>\d{3})\s'
+        r'(?P<bytes>[\d-]*)\s'
         r'"(?P<referer>[^"]*)"\s' # [SIC]
         r'"(?P<user_agent>[^"]*)"\s', re.UNICODE)
         
